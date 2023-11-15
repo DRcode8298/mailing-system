@@ -165,7 +165,7 @@
           <av:Size x:Key="ShapeSize">200,81</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="ファイル操作" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_66">
+      <Sequence DisplayName="ファイル操作" sap:VirtualizedContainerService.HintSize="840,3534" sap2010:WorkflowViewState.IdRef="Sequence_66">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Costomer_Number" />
           <Variable x:TypeArguments="x:String" Name="Costomer_Name" />
@@ -209,7 +209,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ueab:RefreshDataConnectionsX DisplayName="Excel のデータ接続を更新" sap:VirtualizedContainerService.HintSize="444,90" sap2010:WorkflowViewState.IdRef="RefreshDataConnectionsX_2" Workbook="[Excel]" />
-                        <ueab:ReadRangeX DisplayName="範囲を読み込み" sap:VirtualizedContainerService.HintSize="444,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(Deadline)]" SaveTo="[Costomer_Data]" />
+                        <ueab:ReadRangeX DisplayName="範囲を読み込み" sap:VirtualizedContainerService.HintSize="444,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(&quot;全体&quot;)]" SaveTo="[Costomer_Data]" />
                       </Sequence>
                     </ActivityAction>
                   </ueab:ExcelApplicationCard.Body>
@@ -218,7 +218,7 @@
             </ActivityAction>
           </ueab:ExcelProcessScopeX.Body>
         </ueab:ExcelProcessScopeX>
-        <ui:ForEachFileX DisplayName="繰り返し (フォルダー内の各ファイル)" Folder="[folder_path]" sap:VirtualizedContainerService.HintSize="778,2421" sap2010:WorkflowViewState.IdRef="ForEachFileX_5" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
+        <ui:ForEachFileX DisplayName="繰り返し (フォルダー内の各ファイル)" Folder="[folder_path]" sap:VirtualizedContainerService.HintSize="778,2108" sap2010:WorkflowViewState.IdRef="ForEachFileX_5" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
           <ui:ForEachFileX.Body>
             <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
               <ActivityAction.Argument1>
@@ -227,7 +227,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
               </ActivityAction.Argument2>
-              <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="744,2163" sap2010:WorkflowViewState.IdRef="Sequence_67">
+              <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="744,1850" sap2010:WorkflowViewState.IdRef="Sequence_67">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="variable2" />
                 </Sequence.Variables>
@@ -236,19 +236,19 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Costomer_Data]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="682,2052" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Costomer_Data]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="682,1739" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="648,1866" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="648,1553" sap2010:WorkflowViewState.IdRef="Sequence_73">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="606,81" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_13">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[File_Flug]</OutArgument>
                           </Assign.To>
@@ -256,17 +256,15 @@
                             <InArgument x:TypeArguments="x:Boolean">[CurrentFile.Name.Contains(CurrentRow.Item(0).ToString)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If Condition="[File_Flug]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="606,1657" sap2010:WorkflowViewState.IdRef="If_7">
+                        <If Condition="[File_Flug]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="606,1343" sap2010:WorkflowViewState.IdRef="If_7">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="572,1475" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                            <Sequence sap:VirtualizedContainerService.HintSize="572,1161" sap2010:WorkflowViewState.IdRef="Sequence_71">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="フォルダーを作成" sap:VirtualizedContainerService.HintSize="530,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[folder_path &amp; &quot;\完了済み&quot;]" />
-                              <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="フォルダーを作成" sap:VirtualizedContainerService.HintSize="530,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_7" Path="[&quot;\\N1308wssr\◆電子帳簿保存\&quot; &amp; Period &amp;  &quot;期\電子取引\請求書（発）&quot;]" />
-                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[&quot;\\N1308wssr\◆電子帳簿保存\&quot; &amp; Period &amp;  &quot;期\電子取引\請求書（発）&quot;]" DisplayName="ファイルをコピー" sap:VirtualizedContainerService.HintSize="530,154" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[CurrentFile.FullName]" />
                               <umab:OutlookApplicationCard Account="info@dink.co.jp" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="デスクトップ版 Outlook アプリを使用" sap:VirtualizedContainerService.HintSize="530,689" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_2">
                                 <umab:OutlookApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="um:IMailQuickHandle">
